@@ -13,7 +13,7 @@ const sons = {
 };
 
 const criarDiv = (texto) => {
-  const div = document.createElement("div");
+  const div = document.createElement("div"); 
   div.classList.add("key");
   div.textContent = texto;
   div.id = texto;
