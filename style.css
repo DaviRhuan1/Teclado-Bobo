@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Gradiente */
+body {
+  background: linear-gradient(
+    45deg,
+    #000000,
+    #4F4F4F,
+    #363636
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 10s ease infinite;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  color: #f1f1f1;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Barra de navegação */
+
+.navbar {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 20px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #007bff;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.navbar-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: transform 0.4s;
+}
+
+/* Estilos para a versão responsiva */
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .navbar-toggle.active span {
+    background-color: #007bff;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 100px); /* Altura mínima da seção principal */
+  padding-bottom: 100px; /* Altura do rodapé */
+}
+
+.title {
+  color: rgb(236, 236, 236);
+  margin: 20vh auto;
+  font-size: calc(5vw + 20px);
+  text-shadow: 0 0 10px rgb(33, 30, 231), 0 0 10px black, 0 0 10px black;
+}
+
+/* Minha lista de tarefas */
+.input-container {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+button.delete {
+  background-color: #ff3333;
+}
+
+.content {
+  text-align: center;
+  padding: 50px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.container {
+  width: 90vw;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+}
+
+.key {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  background-color: #020202;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.key:hover {
+  background-color: #1C1C1C;
+}
+
+/* Redes sociais */
+
+.social-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.social-link {
+  margin: 0 10px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+/* Rodapé */
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.footer-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0;
+}
