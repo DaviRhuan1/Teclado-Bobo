@@ -180,6 +180,7 @@ li {
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 5px;
+  color: white;
 }
 
 button.delete {
